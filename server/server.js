@@ -41,6 +41,7 @@ var roomOccupantListener = function(connectionObj, msg, socketCallback, callback
                     "msgData": data
                 };
                 for( var j in data) {
+                    console.log(j);
                     // console.log(easyrtc.idToName(j));
                 }
                 socketCallback(output);
@@ -49,7 +50,7 @@ var roomOccupantListener = function(connectionObj, msg, socketCallback, callback
             }
             callback(null);
         }
-        appObj.getConnectionUsernames(successCB);
+        appObj.getConnectionEasyrtcids(successCB);
         console.log("Yay\n\n\n\n\n\n\n\n\n\n.");
     } else {
         easyrtc.events.emitDefault("easyrtcMsg", connectionObj, msg, socketCallback, callback);
